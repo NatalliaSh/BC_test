@@ -1,0 +1,38 @@
+@import '../styles/variables.scss';
+
+.Card {
+  width: 170px;
+  height: 190px;
+
+  .container {
+    background-color: $white;
+    text-align: center;
+    height: 170px;
+    width: 168px;
+    border-radius: 5px;
+    margin-top: 15px;
+    padding-bottom: 3px;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+
+    &:hover {
+      transform: scale(1.05);
+      -moz-box-shadow: 0px 0px 20px 5px rgba(16, 21, 22, 0.4);
+      -webkit-box-shadow: 0px 0px 20px 5px rgba(16, 21, 22, 0.4);
+      box-shadow: 0px 0px 20px 5px rgba(16, 21, 22, 0.4);
+    }
+
+    &__characterAvatar {
+      width: 140px;
+      position: relative;
+      top: -18px;
+      border-radius: 5px;
+      box-shadow: 0px 5px 15px grey;
+    }
+
+    h5 {
+      position: relative;
+      top: -0.4em;
+    }
+  }
+}

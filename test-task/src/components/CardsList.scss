@@ -1,0 +1,9 @@
+.CardsList {
+  &__cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5px;
+    row-gap: 37px;
+    justify-content: space-around;
+  }
+}

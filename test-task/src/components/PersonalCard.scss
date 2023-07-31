@@ -1,0 +1,49 @@
+@import '../styles/variables.scss';
+@import '../styles/mixins.scss';
+
+.PersonalCard {
+  margin: 0 auto;
+  max-width: 660px;
+  border-radius: 10px;
+  background-color: $white;
+  display: flex;
+  height: 300px;
+  overflow-y: scroll;
+
+  @include middle() {
+    flex-direction: column;
+    width: 290px;
+    height: auto;
+  }
+
+  &__avatar {
+    flex: 0 0 300px;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    border-radius: 10px;
+    opacity: 0.9;
+  }
+
+  &__info {
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: fit-content;
+    row-gap: 10px;
+    column-gap: 20px;
+
+    li {
+      flex: 1 1 100px;
+
+      h4 {
+        line-height: 2em;
+      }
+
+      @include middle() {
+        flex: 1 1 50px;
+      }
+    }
+  }
+}
