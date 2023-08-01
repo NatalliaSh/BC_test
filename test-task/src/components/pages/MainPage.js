@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { charactersDataLoad } from '../../redux/charactersDataLoad';
 import { CardsList } from '../CardsList';
 import { Loader } from '../Loader';
+import { ToTopButton } from '../ToTopButton';
 import { charactersFetchURL } from '../../CONST';
 import {
   resetData,
@@ -50,6 +51,7 @@ export const MainPage = () => {
             isPagingButtonActive={characters.workMode === 1}
           />
           <CardsList />
+          <ToTopButton />
         </>
       )}
       {characters.dataLoadState === 1 && <Loader />}
