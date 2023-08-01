@@ -1,25 +1,30 @@
-import { updateLoadState, updateData } from './charactersSlice.js';
-import { setPagesInfo } from './settingsSlice.js';
+import {
+  updateLoadState,
+  updateData,
+  setPagesInfo,
+} from './charactersSlice.js';
 
-export async function charactersDataLoad(
-  dispatch,
-  { resource, page, characterID },
-) {
+export async function charactersDataLoad(dispatch, url) {
   try {
     dispatch(updateLoadState({ state: 1, error: null }));
-    const response = page
-      ? await fetch(`https://rickandmortyapi.com/api/${resource}/?page=${page}`)
-      : characterID
-      ? await fetch(
-          `https://rickandmortyapi.com/api/${resource}/${characterID}`,
-        )
-      : await fetch(`https://rickandmortyapi.com/api/${resource}`);
+    const response = await fetch(url);
 
     if (response.ok) {
       const data = await response.json();
       dispatch(updateLoadState({ state: 2, error: null }));
+      console.log(data.results);
       dispatch(updateData(data.results));
-      dispatch(setPagesInfo(data.info.pages));
+      console.log('UpdateDate');
+      dispatch(
+        setPagesInfo({
+          pagesAmount: data.info.pages,
+          nextPageURL: data.info.next,
+          prevPageURL: data.info.prev,
+          page: data.info.prev
+            ? Number(data.info.prev.match(/(?:\?page=)(\d*)/)[1]) + 1
+            : 1,
+        }),
+      );
     } else {
       dispatch(
         updateLoadState({ state: 3, error: 'HTTP error ' + response.status }),

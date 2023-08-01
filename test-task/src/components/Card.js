@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import './Card.scss';
 
-export const Card = ({ character, cbClickOnCardHandler }) => {
+export const Card = forwardRef(({ character, cbClickOnCardHandler }, ref) => {
   return (
-    <div className='Card'>
+    <div className='Card' ref={ref}>
       <div
         className='Card__container container'
         onClick={() => cbClickOnCardHandler(character)}
@@ -17,4 +17,4 @@ export const Card = ({ character, cbClickOnCardHandler }) => {
       </div>
     </div>
   );
-};
+});
