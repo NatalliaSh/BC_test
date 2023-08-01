@@ -12,9 +12,7 @@ export async function charactersDataLoad(dispatch, url) {
     if (response.ok) {
       const data = await response.json();
       dispatch(updateLoadState({ state: 2, error: null }));
-      console.log(data.results);
       dispatch(updateData(data.results));
-      console.log('UpdateDate');
       dispatch(
         setPagesInfo({
           pagesAmount: data.info.pages,

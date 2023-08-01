@@ -31,7 +31,6 @@ export const CardsList = () => {
 
   const cbInView = async (entries) => {
     if (entries[0].isIntersecting && characters.nextPageURL) {
-      console.log('inView');
       dispatch((dispatch) =>
         charactersDataLoad(dispatch, characters.nextPageURL),
       );
