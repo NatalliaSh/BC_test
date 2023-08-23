@@ -2,7 +2,12 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 5px;
-  max-width: 510px;
-  margin: 20px auto;
+  row-gap: 5px;
+  max-width: 360px;
+  margin: 40px auto 20px auto;
+
+  &__blind {
+    background: none;
+    border: none;
+  }
 }

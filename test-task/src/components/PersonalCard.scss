@@ -3,12 +3,12 @@
 
 .PersonalCard {
   margin: 0 auto;
+  width: max-content;
   max-width: 660px;
   border-radius: 10px;
   background-color: $white;
   display: flex;
-  height: 300px;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   @include middle() {
     flex-direction: column;
@@ -25,6 +25,7 @@
   }
 
   &__info {
+    flex: 0 1 300px;
     padding: 30px;
     display: flex;
     flex-wrap: wrap;
