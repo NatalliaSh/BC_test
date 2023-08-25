@@ -1,5 +1,7 @@
 ## React mini project with the implementation of infinite data loading and pagination option
 
+## [Link to the deployed project](https://natalliash.github.io/BC_test/)
+
 ## Used technologies
 
 - React
